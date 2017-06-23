@@ -235,7 +235,7 @@
     <value>Are you sure you want to cancel the installation of {0}?</value>
   </data>
   <data name="CancelDialogTitle" xml:space="preserve">
-    <value>{0} - Installer</value>
+    <value>{0} - Setup</value>
   </data>
   <data name="ProgressPage_InstallingComponentsTextMain" xml:space="preserve">
     <value>Installing additional components.</value>
@@ -316,13 +316,13 @@
     <value>Cancellation is already in progress.</value>
   </data>
   <data name="CancelAlreadyInProgressMessageBoxTitle" xml:space="preserve">
-    <value>{0} - Install</value>
+    <value>{0} - Setup</value>
   </data>
   <data name="CancelUnavailableMessageBoxBody" xml:space="preserve">
     <value>Can't cancel the installation at this stage.</value>
   </data>
   <data name="CancelUnavailableMessageBoxTitle" xml:space="preserve">
-    <value>{0} - Install</value>
+    <value>{0} - Setup</value>
   </data>
   <data name="Wizard_WindowTitle" xml:space="preserve">
     <value>{0} - Setup {1}</value>
@@ -395,5 +395,14 @@
   </data>
   <data name="PackageConfiguration_PackageList_SQL_Server_2014_with_Advanced_Services__64_bit__patch" xml:space="preserve">
     <value>SQL Server 2014 with Advanced Services (64-bit) patch</value>
+  </data>
+  <data name="PackageConfiguration_PackageList__NET_Framework_3_5" xml:space="preserve">
+    <value>.NET Framework 3.5</value>
+  </data>
+  <data name="WixBootstrapper_RestartPendingDialogBody" xml:space="preserve">
+    <value>There is a restart pending. Please restart your computer before attempting to install {0}.</value>
+  </data>
+  <data name="WixBootstrapper_RestartPendingDialogTitle" xml:space="preserve">
+    <value>{0} - Setup</value>
   </data>
 </root>

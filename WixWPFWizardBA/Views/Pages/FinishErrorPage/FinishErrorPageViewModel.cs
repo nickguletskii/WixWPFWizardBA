@@ -28,6 +28,8 @@
                         return Localisation.FinishErrorPage_FinishErrorCouldntDownloadInstallPackages;
                     case 0x80070002u:
                         return Localisation.FinishErrorPage_FinishErrorCouldntRetrieveInstallPackages;
+                    case 0x84BE0BC2u:
+                        return "SQL Server setup failed because a reboot is pending. Please reboot your computer and try again.";
                     default:
                         return string.Format(Localisation.FinishErrorPage_FinishErrorUnknown,
                             this.WizardViewModel.Status);

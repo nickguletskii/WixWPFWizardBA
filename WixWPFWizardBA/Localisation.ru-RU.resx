@@ -213,6 +213,9 @@
   <data name="FinishErrorPage_FinishErrorCouldntRetrieveInstallPackages" xml:space="preserve">
     <value>Ошибка получения установочных пакетов.</value>
   </data>
+  <data name="FinishErrorPage_FinishErrorSqlServerRebootPending" xml:space="preserve">
+    <value>Не удалось установить SQL Server потому что система находится в состоянии ожидания перезагрузки. Перезагрузите компьютер и повторите установку.</value>
+  </data>
   <data name="FinishErrorPage_FinishErrorUnknown" xml:space="preserve">
     <value>Во время установки произошла ошибка. Статус: 0x{0:X8}</value>
   </data>
@@ -269,6 +272,9 @@
   </data>
   <data name="PackageConfiguration_PackageList_WixWpfWizardBA_Demo_msi" xml:space="preserve">
     <value>WixWpfWizardBA Demo msi</value>
+  </data>
+  <data name="PackageConfiguration_PackageList__NET_Framework_3_5" xml:space="preserve">
+    <value>.NET Framework 3.5</value>
   </data>
   <data name="PackageConfiguration_PackageList__NET_Framework_4_6_2" xml:space="preserve">
     <value>.NET Framework 4.6.2</value>

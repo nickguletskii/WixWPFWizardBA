@@ -29,10 +29,20 @@
 
             FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(
                 XmlLanguage.GetLanguage(cultureInfo.IetfLanguageTag)));
-
             try
             {
                 this.Engine.CloseSplashScreen();
+
+                var rebootPending = this.Engine.StringVariables["RebootPending"];
+                if (!string.IsNullOrEmpty(rebootPending) && rebootPending != "0")
+                {
+                    MessageBox.Show(
+                        string.Format(Localisation.WixBootstrapper_RestartPendingDialogBody, this.BundleName),
+                        string.Format(Localisation.WixBootstrapper_RestartPendingDialogTitle, this.BundleName),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    this.Engine.Quit(3010);
+                }
 
                 this.Engine.Log(LogLevel.Verbose, "Launching Burn frontend");
                 BootstrapperDispatcher = Dispatcher.CurrentDispatcher;

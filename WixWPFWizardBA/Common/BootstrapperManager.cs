@@ -26,6 +26,7 @@
 
 
         private LaunchAction _launchAction;
+        private LaunchAction _executedAction;
         private bool _restartConfirmed;
         private bool _restartRequired;
         private int _status;
@@ -204,6 +205,23 @@
                 }
             }
         }
+        /// <summary>
+        ///     The action that will be executed when the installaiton will begin.
+        /// </summary>
+        public LaunchAction ExecutedAction
+        {
+            get => this._executedAction;
+            set
+            {
+                if (this._executedAction != value)
+                {
+                    this._executedAction = value;
+                    this.OnPropertyChanged(nameof(this.ExecutedAction));
+                    this.Log(LogLevel.Standard,
+                        $"{nameof(this.ExecutedAction)} changed: {this.ExecutedAction}");
+                }
+            }
+        }
 
         /// <summary>
         ///     The status given by the Wix bootstrapper's ApplyComplete event.
@@ -356,6 +374,8 @@
                 $"Bootstrapper has called {nameof(this.Bootstrapper_DetectUpdateBegin)}");
             //http://wixtoolset.org/releases/feed/v3.11
             if (this.IsInteractive
+                && (this.Bootstrapper.Command.Resume == ResumeType.None ||
+                    this.Bootstrapper.Command.Resume == ResumeType.Arp)
                 &&
                 this.BootstrapperUpdateState != UpdateState.Failed
                 && this.Bootstrapper.Command.Action != LaunchAction.Uninstall)
@@ -406,6 +426,7 @@
 
         private void Bootstrapper_Error(object sender, ErrorEventArgs e)
         {
+            e.Result = Result.Restart;
             this.Log(LogLevel.Debug,
                 $"Bootstrapper has called {nameof(this.Bootstrapper_Error)}");
             lock (this)
@@ -719,6 +740,7 @@
                     : BurnInstallationState.Failed;
                 this.RestartRequired = e.Restart == ApplyRestart.RestartRequired ||
                                        e.Restart == ApplyRestart.RestartInitiated;
+                this.ExecutedAction = this.LaunchAction;
                 if (this.IsInteractive)
                     this.ExecuteOnDispatcher(this.TransitionToFinishPhase);
                 else

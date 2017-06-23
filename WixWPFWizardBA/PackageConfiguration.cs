@@ -12,6 +12,7 @@
         public const string Sql2014ExpressUpgradePackage64Id = "Sql2014ExpressUpgrade_x64";
         public const string Sql2014ExpressPatchPackage64Id = "Sql2014ExpressPatch_x64";
         public const string Netfx462RedistPackageId = "NetFx462Redist";
+        public const string Netfx35RedistPackageId = "BANetFx35Redist";
         public const string WixWpfWizardBaDemoMsi = "WixWPFWizardBA.DemoMsi";
         public const string ServerToolsFeature = "ServerToolsFeature";
 
@@ -25,6 +26,15 @@
                     Architectures = Architecture.X86 | Architecture.X64,
                     InstallationTypes = new[]
                         {InstallationType.Client, InstallationType.MasterServer, InstallationType.SlaveServer}
+                },
+                new Package<PackageCombinationConfiguration, InstallationType>
+                {
+                    PackageId = Netfx35RedistPackageId,
+                    DisplayName = Localisation.PackageConfiguration_PackageList__NET_Framework_3_5,
+                    Architectures = Architecture.X86 | Architecture.X64,
+                    InstallationTypes = new[]
+                        {InstallationType.Client, InstallationType.MasterServer, InstallationType.SlaveServer},
+                    IsRemovable = false
                 },
                 new Package<PackageCombinationConfiguration, InstallationType>
                 {

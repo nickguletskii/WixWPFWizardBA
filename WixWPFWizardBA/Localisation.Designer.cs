@@ -169,7 +169,7 @@ namespace WixWPFWizardBA {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} - Install.
+        ///   Looks up a localized string similar to {0} - Setup.
         /// </summary>
         public static string CancelAlreadyInProgressMessageBoxTitle {
             get {
@@ -187,7 +187,7 @@ namespace WixWPFWizardBA {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} - Installer.
+        ///   Looks up a localized string similar to {0} - Setup.
         /// </summary>
         public static string CancelDialogTitle {
             get {
@@ -205,7 +205,7 @@ namespace WixWPFWizardBA {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} - Install.
+        ///   Looks up a localized string similar to {0} - Setup.
         /// </summary>
         public static string CancelUnavailableMessageBoxTitle {
             get {
@@ -354,6 +354,15 @@ namespace WixWPFWizardBA {
         public static string FinishErrorPage_FinishErrorCouldntRetrieveInstallPackages {
             get {
                 return ResourceManager.GetString("FinishErrorPage_FinishErrorCouldntRetrieveInstallPackages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQL Server setup failed because a reboot is pending. Please reboot your computer and try again..
+        /// </summary>
+        public static string FinishErrorPage_FinishErrorSqlServerRebootPending {
+            get {
+                return ResourceManager.GetString("FinishErrorPage_FinishErrorSqlServerRebootPending", resourceCulture);
             }
         }
         
@@ -507,6 +516,15 @@ namespace WixWPFWizardBA {
         public static string Package_WixWpfWizardBaDemoMsi {
             get {
                 return ResourceManager.GetString("Package_WixWpfWizardBaDemoMsi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .NET Framework 3.5.
+        /// </summary>
+        public static string PackageConfiguration_PackageList__NET_Framework_3_5 {
+            get {
+                return ResourceManager.GetString("PackageConfiguration_PackageList__NET_Framework_3_5", resourceCulture);
             }
         }
         
@@ -817,6 +835,24 @@ namespace WixWPFWizardBA {
         public static string WelcomePage_WelcomeText {
             get {
                 return ResourceManager.GetString("WelcomePage_WelcomeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a restart pending. Please restart your computer before attempting to install {0}..
+        /// </summary>
+        public static string WixBootstrapper_RestartPendingDialogBody {
+            get {
+                return ResourceManager.GetString("WixBootstrapper_RestartPendingDialogBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} - Setup.
+        /// </summary>
+        public static string WixBootstrapper_RestartPendingDialogTitle {
+            get {
+                return ResourceManager.GetString("WixBootstrapper_RestartPendingDialogTitle", resourceCulture);
             }
         }
         

@@ -41,14 +41,13 @@
     </BootstrapperApplicationRef>
 
     <Chain>
+      <PackageGroupRef Id="BANetFx35Redist"/>
       <PackageGroupRef Id="NetFx462Redist"/>
-      <RollbackBoundary />
       <MsiPackage SourceFile="$(var.WixWPFWizardBA.DemoMsi.TargetPath)"
                   Name="packages\WixWPFWizardBA.DemoMsi.msi"
                   Visible="no"
                   EnableFeatureSelection="yes"
                   Id="WixWPFWizardBA.DemoMsi"/>
-      <RollbackBoundary />
       <PackageGroupRef Id="Sql2014ExpressUpgrade"/>
       <PackageGroupRef Id="Sql2014Express"/>
     </Chain>

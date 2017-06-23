@@ -24,19 +24,19 @@
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding WizardViewModel.LaunchAction}"
+                        <DataTrigger Binding="{Binding WizardViewModel.ExecutedAction}"
                                      Value="{x:Static bootstrapper:LaunchAction.Layout}">
                             <Setter Property="Text" Value="{Binding Bootstrapper.BundleName, StringFormat={x:Static wixWpfWizardBa:Localisation.FinishPage_LayoutFinishedSuccessfully}}" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding WizardViewModel.LaunchAction}"
+                        <DataTrigger Binding="{Binding WizardViewModel.ExecutedAction}"
                                      Value="{x:Static bootstrapper:LaunchAction.Uninstall}">
                             <Setter Property="Text" Value="{Binding Bootstrapper.BundleName, StringFormat={x:Static wixWpfWizardBa:Localisation.FinishPage_UninstallFinishedSuccessfully}}" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding WizardViewModel.LaunchAction}"
+                        <DataTrigger Binding="{Binding WizardViewModel.ExecutedAction}"
                                      Value="{x:Static bootstrapper:LaunchAction.Repair}">
                             <Setter Property="Text" Value="{Binding Bootstrapper.BundleName, StringFormat={x:Static wixWpfWizardBa:Localisation.FinishPage_RepairFinishedSuccessfully}}" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding WizardViewModel.LaunchAction}"
+                        <DataTrigger Binding="{Binding WizardViewModel.ExecutedAction}"
                                      Value="{x:Static bootstrapper:LaunchAction.Modify}">
                             <Setter Property="Text" Value="{Binding Bootstrapper.BundleName, StringFormat={x:Static wixWpfWizardBa:Localisation.FinishPage_ModificationFinishedSuccessfully}}" />
                         </DataTrigger>
