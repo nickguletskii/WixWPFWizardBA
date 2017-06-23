@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfigurationPage_AdditionalServerSettingsHeader" xml:space="preserve">
+    <value>Additional settings</value>
+  </data>
+  <data name="AdvancedConfigurationPage_AdditionalSqlServerInstallParameters" xml:space="preserve">
+    <value>Additional SQL Server installation parameters</value>
+  </data>
+  <data name="BrowseButtonText" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="BootrapperUpdateCheckPage_CheckingForUpdatesMessage" xml:space="preserve">
+    <value>Checking for updates...</value>
+  </data>
+  <data name="BootstrapperUpdateAvailablePage_DownloadNewInstallerButtonText" xml:space="preserve">
+    <value>Download new installer</value>
+  </data>
+  <data name="FinishPage_ExitButtonText" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="FinishErrorPage_FinishErrorCanceled" xml:space="preserve">
+    <value>The installation was cancelled.</value>
+  </data>
+  <data name="FinishErrorPage_FinishErrorConnectionError" xml:space="preserve">
+    <value>Internet connection error.</value>
+  </data>
+  <data name="FinishErrorPage_FinishErrorCouldntDownloadInstallPackages" xml:space="preserve">
+    <value>Couldn't download additional packages from the internet.</value>
+  </data>
+  <data name="FinishErrorPage_FinishErrorCouldntRetrieveInstallPackages" xml:space="preserve">
+    <value>Couldn't retrieve additional packages.</value>
+  </data>
+  <data name="FinishErrorPage_FinishErrorUnknown" xml:space="preserve">
+    <value>An error has occurred, status code: 0x{0:X8}</value>
+  </data>
+  <data name="AdvancedConfigurationPage_HideAdvancedSettingsCheckbox" xml:space="preserve">
+    <value>Use recommended settings</value>
+  </data>
+  <data name="FinishPage_InstallationFinishedSuccessfully" xml:space="preserve">
+    <value>{0} has been successfully installed.</value>
+  </data>
+  <data name="AdvancedConfigurationPage_InstallationPathLabel" xml:space="preserve">
+    <value>Installation path for {0}</value>
+  </data>
+  <data name="ConfigurationPage_InstallationTypeClient" xml:space="preserve">
+    <value>Client only</value>
+  </data>
+  <data name="ConfigurationPage_InstallationTypeClientDescription" xml:space="preserve">
+    <value>Only the client will be installed. A server will have to be installed on a different computer on the network.</value>
+  </data>
+  <data name="ConfigurationPage_InstallationTypeServer" xml:space="preserve">
+    <value>Client and server</value>
+  </data>
+  <data name="ConfigurationPage_InstallationTypeServerDescription" xml:space="preserve">
+    <value>Both the client and the server will be installed.</value>
+  </data>
+  <data name="BootstrapperManager_InstallErrorMessageTitle" xml:space="preserve">
+    <value>{0} - Error while installing</value>
+  </data>
+  <data name="BootstrapperManager_NewerVersionInstalledMessage" xml:space="preserve">
+    <value>A newer version of is {0} already installed</value>
+  </data>
+  <data name="BootstrapperManager_NewerVersionInstalledTitle" xml:space="preserve">
+    <value>{0} - Newer version already installed</value>
+  </data>
+  <data name="BootstrapperUpdateAvailablePage_NewInstallerAvailableMessage" xml:space="preserve">
+    <value>A new version of the installer for {0} is available.</value>
+  </data>
+  <data name="FinishPage_RebootButtonText" xml:space="preserve">
+    <value>Reboot now</value>
+  </data>
+  <data name="FinishPage_RestartRequired" xml:space="preserve">
+    <value>To complete the installation, the computer must be rebooted.</value>
+  </data>
+  <data name="BootstrapperUpdateAvailablePage_RunNewInstallerButtonText" xml:space="preserve">
+    <value>Run new installer</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerAlreadyUpToDateMessage" xml:space="preserve">
+    <value>SQL Server 2014 R2 Express with Advanced Services is already installed.</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerPatchWillBePerformedMessage" xml:space="preserve">
+    <value>SQL Server 2014 R2 Express with Advanced Services will be patched.</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerInstanceNameTextBoxLabel" xml:space="preserve">
+    <value>Instance name:</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerUnknownInstallationStateMessage" xml:space="preserve">
+    <value>Unknown SQL Server installation state.</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerUnsupportedUpgradeTypeMessage" xml:space="preserve">
+    <value>An unsupported upgrade path has been detected. This might be caused by 32-bit SQL Server being installed on a 64-bit operating system. You will have to upgrade SQL Server to SQL Server 2014 R2 Express with Advanced Services manually.</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerWillBeInstalledMessage" xml:space="preserve">
+    <value>SQL Server 2014 R2 Express with Advanced Services will be installed on this computer.</value>
+  </data>
+  <data name="ConfigurationPage_SqlServerWillBeUpgradedMessage" xml:space="preserve">
+    <value>An existing installation of SQL Server will be upgraded to SQL Server 2014 R2 Express with Advanced Services.</value>
+  </data>
+  <data name="LicensePage_AcceptLicenseAgreementCheckboxText" xml:space="preserve">
+    <value>I accept the license agreement</value>
+  </data>
+  <data name="LayoutConfigurationPage_LayoutPathLabel" xml:space="preserve">
+    <value>Please select a directory to save the complete installer for {0} to:</value>
+  </data>
+  <data name="PlanPage_PlanningMessage" xml:space="preserve">
+    <value>Planning installation of {0}...</value>
+  </data>
+  <data name="Wizard_BackButtonText" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ProgressPage_CachingTextMain" xml:space="preserve">
+    <value>Caching WixWPFWizardBA installation files on the local computer...</value>
+  </data>
+  <data name="Wizard_CancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CancelDialogBody" xml:space="preserve">
+    <value>Are you sure you want to cancel the installation of {0}?</value>
+  </data>
+  <data name="CancelDialogTitle" xml:space="preserve">
+    <value>{0} - Installer</value>
+  </data>
+  <data name="ProgressPage_InstallingComponentsTextMain" xml:space="preserve">
+    <value>Installing additional components.</value>
+  </data>
+  <data name="ProgressPage_InstallingTextDontTurnOffComputer" xml:space="preserve">
+    <value>Please don't turn off the computer. Doing so may result in damage to the operating system.</value>
+  </data>
+  <data name="ProgressPage_InstallingTextLine1" xml:space="preserve">
+    <value>This process may take from several seconds to several hours to complete.</value>
+  </data>
+  <data name="ProgressPage_InstallingTextLine2" xml:space="preserve">
+    <value>Missing components will be downloaded from the internet automatically.</value>
+  </data>
+  <data name="ProgressPage_InstallingTextMain" xml:space="preserve">
+    <value>Installing WixWPFWizardBA.</value>
+  </data>
+  <data name="ProgressPage_LayoutInProgressTextMain" xml:space="preserve">
+    <value>Creating an offline installer for WixWPFWizardBA.</value>
+  </data>
+  <data name="ProgressPage_LayoutInProgressTextMayTakeSomeTime" xml:space="preserve">
+    <value>This can take some time, depending on the parameters of your internet connection.</value>
+  </data>
+  <data name="Wizard_NextButtonText" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ProgressPage_ProgressCachingEntryText" xml:space="preserve">
+    <value>Caching "{0}"</value>
+  </data>
+  <data name="ProgressPage_ProgressCopyEntryText" xml:space="preserve">
+    <value>Copying "{0}"</value>
+  </data>
+  <data name="ProgressPage_ProgressDownloadEntryText" xml:space="preserve">
+    <value>Downloading "{0}"</value>
+  </data>
+  <data name="ProgressPage_ProgressExecuteEntryText" xml:space="preserve">
+    <value>Installing "{0}"</value>
+  </data>
+  <data name="ProgressPage_ProgressExtractEntryText" xml:space="preserve">
+    <value>Extracting "{0}"</value>
+  </data>
+  <data name="ProgressPage_RemovingTextMain" xml:space="preserve">
+    <value>Removing WixWPFWizardBA.</value>
+  </data>
+  <data name="ProgressPage_RepairingTextMain" xml:space="preserve">
+    <value>Repairing WixWPFWizardBA.</value>
+  </data>
+  <data name="ProgressPage_TotalProgressText" xml:space="preserve">
+    <value>Total progress: {0}%</value>
+  </data>
+  <data name="ProgressPage_UpdatingTextLine2" xml:space="preserve">
+    <value>We recommend that you visit the website and check out what's new.</value>
+  </data>
+  <data name="ProgressPage_UpdatingTextMain" xml:space="preserve">
+    <value>Updating WixWPFWizardBA.</value>
+  </data>
+  <data name="WelcomePage_AddComponentsButtonText" xml:space="preserve">
+    <value>Add components</value>
+  </data>
+  <data name="WelcomePage_InstallButtonText" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="WelcomePage_LayoutButtonText" xml:space="preserve">
+    <value>Create an offline installer</value>
+  </data>
+  <data name="WelcomePage_RepairButtonText" xml:space="preserve">
+    <value>Repair</value>
+  </data>
+  <data name="WelcomePage_UninstallButtonText" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="WelcomePage_UpdateButtonText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="WelcomePage_WelcomeText" xml:space="preserve">
+    <value>Welcome to the graphical installer for {0}!</value>
+  </data>
+  <data name="CancelAlreadyInProgressMessageBoxBody" xml:space="preserve">
+    <value>Cancellation is already in progress.</value>
+  </data>
+  <data name="CancelAlreadyInProgressMessageBoxTitle" xml:space="preserve">
+    <value>{0} - Install</value>
+  </data>
+  <data name="CancelUnavailableMessageBoxBody" xml:space="preserve">
+    <value>Can't cancel the installation at this stage.</value>
+  </data>
+  <data name="CancelUnavailableMessageBoxTitle" xml:space="preserve">
+    <value>{0} - Install</value>
+  </data>
+  <data name="Wizard_WindowTitle" xml:space="preserve">
+    <value>{0} - Setup {1}</value>
+  </data>
+  <data name="Wizard_HeaderCreatingOfflineInstaller" xml:space="preserve">
+    <value>{0} - Creating offline installer</value>
+  </data>
+  <data name="Wizard_HeaderInstalling" xml:space="preserve">
+    <value>Installing {0}</value>
+  </data>
+  <data name="Wizard_HeaderModifying" xml:space="preserve">
+    <value>Modifying {0}</value>
+  </data>
+  <data name="Wizard_HeaderRemoving" xml:space="preserve">
+    <value>Removing {0}</value>
+  </data>
+  <data name="Wizard_HeaderRepairing" xml:space="preserve">
+    <value>Repairing {0}</value>
+  </data>
+  <data name="Package_Netfx462Redist" xml:space="preserve">
+    <value>.NET Framework 4.6.2</value>
+  </data>
+  <data name="Package_WixWpfWizardBaDemoMsi" xml:space="preserve">
+    <value>WixWpfWizardBA Demo msi</value>
+  </data>
+  <data name="Package_Sql2014Express" xml:space="preserve">
+    <value>SQL Server 2014 R2 Express with Advanced Services</value>
+  </data>
+  <data name="Package_Sql2014ExpressPatch" xml:space="preserve">
+    <value>SQL Server 2014 R2 Express with Advanced Services patch</value>
+  </data>
+  <data name="Package_Sql2014ExpressUpgrade" xml:space="preserve">
+    <value>Update to SQL Server 2014 R2 Express with Advanced Services</value>
+  </data>
+  <data name="InstallButtonText" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="FinishPage_LayoutFinishedSuccessfully" xml:space="preserve">
+    <value>An offline installer for {0} has been created successfully.</value>
+  </data>
+  <data name="FinishPage_ModificationFinishedSuccessfully" xml:space="preserve">
+    <value>{0} has been successfully modified.</value>
+  </data>
+  <data name="FinishPage_RepairFinishedSuccessfully" xml:space="preserve">
+    <value>{0} has been successfully repaired.</value>
+  </data>
+  <data name="FinishPage_UninstallFinishedSuccessfully" xml:space="preserve">
+    <value>{0} has been successfully removed.</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_WixWpfWizardBA_Demo_msi" xml:space="preserve">
+    <value>WixWpfWizardBA Demo msi</value>
+  </data>
+  <data name="PackageConfiguration_PackageList__NET_Framework_4_6_2" xml:space="preserve">
+    <value>.NET Framework 4.6.2</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_SQL_Server_2014_with_Advanced_Services__32_bit_" xml:space="preserve">
+    <value>SQL Server 2014 with Advanced Services (32-bit)</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_Upgrade_to_SQL_Server_2014_with_Advanced_Services__32_bit_" xml:space="preserve">
+    <value>Upgrade to SQL Server 2014 with Advanced Services (32-bit)</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_SQL_Server_2014_with_Advanced_Services__32_bit__patch" xml:space="preserve">
+    <value>SQL Server 2014 with Advanced Services (32-bit) patch</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_SQL_Server_2014_with_Advanced_Services__64_bit_" xml:space="preserve">
+    <value>SQL Server 2014 with Advanced Services (64-bit)</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_Upgrade_to_SQL_Server_2014_with_Advanced_Services__64_bit_" xml:space="preserve">
+    <value>Upgrade to SQL Server 2014 with Advanced Services (64-bit)</value>
+  </data>
+  <data name="PackageConfiguration_PackageList_SQL_Server_2014_with_Advanced_Services__64_bit__patch" xml:space="preserve">
+    <value>SQL Server 2014 with Advanced Services (64-bit) patch</value>
+  </data>
+</root>

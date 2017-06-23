@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="WixWPFWizardBA.DemoMsi" Language="1033" Version="1.0.0.0" Manufacturer="Nick Guletskii" UpgradeCode="7de615ba-adcf-47f6-9c6f-13a27b2963cd">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ClientFeatures"
+             Title="Client tools"
+             Level="1">
+      <ComponentGroupRef Id="ClientComponents" />
+    </Feature>
+    <Feature Id="ServerToolsFeature"
+             Title="Server tools"
+             Level="1">
+      <ComponentGroupRef Id="ServerComponents" />
+    </Feature>
+
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="WixWPFWizardBA.DemoMsi" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ClientComponents" Directory="INSTALLFOLDER">
+      <Component Id="DemoClientFile"
+                 Guid="*">
+        <File Id="DemoClientFile"
+              KeyPath="yes"
+              Source="client.txt" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="ServerComponents" Directory="INSTALLFOLDER">
+      <Component Id="DemoServerFile"
+                 Guid="*">
+        <File Id="DemoServerFile"
+              KeyPath="yes"
+              Source="server.txt" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

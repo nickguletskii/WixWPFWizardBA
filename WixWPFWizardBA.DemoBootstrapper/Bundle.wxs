@@ -1,0 +1,214 @@
+﻿<?xml
+  version="1.0"
+  encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:dep="http://schemas.microsoft.com/wix/DependencyExtension">
+  <Bundle Name="!(loc.BundleName)"
+          Version="!(bind.packageVersion.WixWPFWizardBA.DemoMsi)"
+          Manufacturer="!(loc.Manufacturer)"
+          UpgradeCode="ac693919-80df-4b2a-b7ee-b4653e7e92c1"
+          UpdateUrl="!(loc.UpdateUrl)">
+    <Update Location="!(loc.UpdateUrl)"/>
+    <Variable Name="InstallDir"
+              bal:Overridable="yes"
+              Value="[ProgramFilesFolder]!(BundleProgramFilesDirName)\" />
+
+    <Variable Name="SqlServerAdditionalParameters"
+              bal:Overridable="yes"
+              Value="" />
+
+    <Variable Name="InstanceName"
+              bal:Overridable="yes"
+              Persisted="yes"
+              Value="SQLEXPRESS" />
+    <Variable Name="BundleInstallationType"
+              bal:Overridable="yes"
+              Persisted="yes"
+              Value="Client" />
+    <Variable Name="BundleSqlServerInstallationType"
+              bal:Overridable="yes"
+              Value="Unknown" />
+
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+      <Payload SourceFile="$(var.WixWPFWizardBA.TargetDir)\BootstrapperCore.config"/>
+      <Payload SourceFile="$(var.WixWPFWizardBA.TargetDir)\Ookii.Dialogs.Wpf.dll"/>
+      <Payload SourceFile="$(var.WixWPFWizardBA.TargetPath)"/>
+      <!-- To support localisation, we have to include the sattelite assemblies too! -->
+      <Payload SourceFile="$(var.WixWPFWizardBA.TargetDir)\ru-RU\WixWPFWizardBA.resources.dll" Name="ru-RU\WixWPFWizardBA.resources.dll"/>
+    </BootstrapperApplicationRef>
+
+    <Chain>
+      <PackageGroupRef Id="NetFx462Redist"/>
+      <RollbackBoundary />
+      <MsiPackage SourceFile="$(var.WixWPFWizardBA.DemoMsi.TargetPath)"
+                  Name="packages\WixWPFWizardBA.DemoMsi.msi"
+                  Visible="no"
+                  EnableFeatureSelection="yes"
+                  Id="WixWPFWizardBA.DemoMsi"/>
+      <RollbackBoundary />
+      <PackageGroupRef Id="Sql2014ExpressUpgrade"/>
+      <PackageGroupRef Id="Sql2014Express"/>
+    </Chain>
+  </Bundle>
+  <Fragment>
+    <Variable Name="SqlServerSAPassword"
+              Type="string"
+              Value="TestPassword"
+              bal:Overridable="yes" />
+    
+    <Variable Name="SqlServerInstallCommand"
+              Type="string"
+              Value="/ACTION=&quot;Install&quot; /ROLE=&quot;AllFeatures_WithDefaults&quot; /ENU=&quot;True&quot; /UpdateEnabled=&quot;False&quot; /ERRORREPORTING=&quot;False&quot; /USEMICROSOFTUPDATE=&quot;False&quot; /FEATURES=SQLENGINE,FULLTEXT,CONN,BC,SDK /UpdateSource=&quot;MU&quot; /HELP=&quot;False&quot; /SQMREPORTING=&quot;False&quot; /RSINSTALLMODE=&quot;DefaultNativeMode&quot; /AGTSVCACCOUNT=&quot;NT AUTHORITY\NETWORK SERVICE&quot; /AGTSVCSTARTUPTYPE=&quot;Disabled&quot; /COMMFABRICPORT=&quot;0&quot; /COMMFABRICNETWORKLEVEL=&quot;0&quot; /COMMFABRICENCRYPTION=&quot;0&quot; /MATRIXCMBRICKCOMMPORT=&quot;0&quot; /SQLSVCSTARTUPTYPE=&quot;Automatic&quot; /FILESTREAMLEVEL=&quot;0&quot; /ENABLERANU=&quot;True&quot; /SQLCOLLATION=&quot;SQL_Latin1_General_CP1_CI_AS&quot; /SQLSVCACCOUNT=&quot;NT SERVICE\MSSQL$[InstanceName]&quot; /SECURITYMODE=&quot;SQL&quot; /ADDCURRENTUSERASSQLADMIN=&quot;True&quot; /TCPENABLED=&quot;1&quot; /NPENABLED=&quot;1&quot; /BROWSERSVCSTARTUPTYPE=&quot;Automatic&quot; /RSSVCACCOUNT=&quot;NT Service\ReportServer$[InstanceName]&quot; /RSSVCSTARTUPTYPE=&quot;Automatic&quot; /FTSVCACCOUNT=&quot;NT SERVICE\MSSQLFDLauncher$[InstanceName]&quot; /TCPENABLED=1 /Q /HIDECONSOLE /IAcceptSQLServerLicenseTerms /SAPWD=&quot;[SqlServerSAPassword]&quot; [SqlServerAdditionalParameters]"
+              bal:Overridable="yes" />
+
+    <Variable Name="SqlServerPatchCommand"
+              Type="string"
+              Value="/ACTION=Patch /Q /HIDECONSOLE /ENU=&quot;True&quot; /IAcceptSQLServerLicenseTerms [SqlServerAdditionalParameters]"
+              bal:Overridable="yes" />
+    
+    <Variable Name="SqlServerUpgradeCommand"
+              Type="string"
+              Value="/ACTION=Upgrade /Q /HIDECONSOLE /ENU=&quot;True&quot; /IAcceptSQLServerLicenseTerms [SqlServerAdditionalParameters]"
+              bal:Overridable="yes" />
+
+    <PackageGroup Id="Sql2014Express">
+      <ExePackage Id="Sql2014Express_x86"
+                  Name="redist\SQLEXPRADV_x86_ENU.exe"
+                  DisplayName="SQL Server 2014 Express"
+                  Cache="yes"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="no"
+                  Vital="yes"
+                  DownloadUrl="https://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe"
+                  InstallCommand="[SqlServerInstallCommand] /INSTANCENAME=&quot;[InstanceName]&quot; /INSTANCEID=&quot;[InstanceName]&quot; "
+                  UninstallCommand="/Action=Uninstall /INSTANCENAME=[InstanceName] /FEATURES=SQL /Q /HIDECONSOLE">
+        <RemotePayload CertificatePublicKey="A260A870BE1145ED71E2BB5AA19463A4FE9DCC41" 
+                       CertificateThumbprint="108E2BA23632620C427C570B6D9DB51AC31387FE"
+                       Description="Microsoft SQL Server 2014  Express Advanced x86" 
+                       Hash="B141A30B9175E9A4A6734AF757535A5F21E6302A"
+                       ProductName="Microsoft SQL Server 2014  Express Advanced x86" 
+                       Size="1179270072" 
+                       Version="12.0.2000.8" />
+        <ExitCode Value="3010"
+                  Behavior="forceReboot" />
+        <dep:Provides DisplayName="Net2 SQL Server 2014 Express"
+                      Key="SQLServer2014Express_x86,[InstanceName]"
+                      Version="12.0.5000.0" />
+      </ExePackage>
+      <ExePackage Id="Sql2014Express_x64"
+                  Name="redist\SQLEXPRADV_x64_ENU.exe"
+                  DisplayName="SQL Server 2014 Express"
+                  Cache="yes"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="no"
+                  Vital="yes"
+                  DownloadUrl="https://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe"
+                  InstallCommand="[SqlServerInstallCommand] /INSTANCENAME=&quot;[InstanceName]&quot; /INSTANCEID=&quot;[InstanceName]&quot; "
+                  UninstallCommand="/Action=Uninstall /INSTANCENAME=[InstanceName] /FEATURES=SQL /Q /HIDECONSOLE">
+        <RemotePayload CertificatePublicKey="A260A870BE1145ED71E2BB5AA19463A4FE9DCC41"
+                       CertificateThumbprint="108E2BA23632620C427C570B6D9DB51AC31387FE"
+                       Description="Microsoft SQL Server 2014  Express Advanced x64"
+                       Hash="FB75D07E09DFA817F2B237B73FD650A4013F50EA"
+                       ProductName="Microsoft SQL Server 2014  Express Advanced x64"
+                       Size="1202918472"
+                       Version="12.0.2000.8" />
+        <ExitCode Value="3010"
+                  Behavior="forceReboot" />
+        <dep:Provides DisplayName="Net2 SQL Server 2014 Express"
+                      Key="SQLServer2014Express_x64,[InstanceName]"
+                      Version="12.0.5000.0" />
+      </ExePackage>
+    </PackageGroup>
+    <PackageGroup Id="Sql2014ExpressUpgrade">
+      <ExePackage Id="Sql2014ExpressPatch_x86"
+                  Name="redist\SQLEXPRADV_x86_ENU.exe"
+                  DisplayName="SQL Server 2014 SP2 Express Patch"
+                  Cache="no"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="yes"
+                  Vital="yes"
+                  DownloadUrl="https://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe"
+                  InstallCommand="[SqlServerPatchCommand] /INSTANCENAME=[InstanceName]">
+        <RemotePayload CertificatePublicKey="A260A870BE1145ED71E2BB5AA19463A4FE9DCC41"
+                       CertificateThumbprint="108E2BA23632620C427C570B6D9DB51AC31387FE"
+                       Description="Microsoft SQL Server 2014  Express Advanced x86"
+                       Hash="B141A30B9175E9A4A6734AF757535A5F21E6302A"
+                       ProductName="Microsoft SQL Server 2014  Express Advanced x86"
+                       Size="1179270072"
+                       Version="12.0.2000.8" />
+        <ExitCode Value="3010"
+                  Behavior="forceReboot" />
+      </ExePackage>
+
+      <ExePackage Id="Sql2014ExpressPatch_x64"
+                  Name="redist\SQLEXPRADV_x64_ENU.exe"
+                  DisplayName="SQL Server 2014 SP2 Express Patch"
+                  Cache="no"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="yes"
+                  Vital="yes"
+                  DownloadUrl="https://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe"
+                  InstallCommand="[SqlServerPatchCommand] /INSTANCENAME=[InstanceName]">
+        <RemotePayload CertificatePublicKey="A260A870BE1145ED71E2BB5AA19463A4FE9DCC41"
+                       CertificateThumbprint="108E2BA23632620C427C570B6D9DB51AC31387FE"
+                       Description="Microsoft SQL Server 2014  Express Advanced x64"
+                       Hash="FB75D07E09DFA817F2B237B73FD650A4013F50EA"
+                       ProductName="Microsoft SQL Server 2014  Express Advanced x64"
+                       Size="1202918472"
+                       Version="12.0.2000.8" />
+        <ExitCode Value="3010"
+                  Behavior="forceReboot" />
+      </ExePackage>
+
+      <ExePackage Id="Sql2014ExpressUpgrade_x86"
+                  Name="redist\SQLEXPRADV_x86_ENU.exe"
+                  DisplayName="SQL Server 2014 Express Upgrade"
+                  Cache="no"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="yes"
+                  Vital="yes"
+                  DownloadUrl="https://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe"
+                  InstallCommand="[SqlServerUpgradeCommand] /INSTANCENAME=[InstanceName]">
+        <RemotePayload CertificatePublicKey="A260A870BE1145ED71E2BB5AA19463A4FE9DCC41"
+                       CertificateThumbprint="108E2BA23632620C427C570B6D9DB51AC31387FE"
+                       Description="Microsoft SQL Server 2014  Express Advanced x86"
+                       Hash="B141A30B9175E9A4A6734AF757535A5F21E6302A"
+                       ProductName="Microsoft SQL Server 2014  Express Advanced x86"
+                       Size="1179270072"
+                       Version="12.0.2000.8" />
+        <ExitCode Value="3010"
+                  Behavior="forceReboot" />
+      </ExePackage>
+
+      <ExePackage Id="Sql2014ExpressUpgrade_x64"
+                  Name="redist\SQLEXPRADV_x64_ENU.exe"
+                  DisplayName="SQL Server 2014 Express Upgrade"
+                  Cache="no"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="yes"
+                  Vital="yes"
+                  DownloadUrl="https://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe"
+                  InstallCommand="[SqlServerUpgradeCommand] /INSTANCENAME=[InstanceName]">
+        <RemotePayload CertificatePublicKey="A260A870BE1145ED71E2BB5AA19463A4FE9DCC41"
+                       CertificateThumbprint="108E2BA23632620C427C570B6D9DB51AC31387FE"
+                       Description="Microsoft SQL Server 2014  Express Advanced x64"
+                       Hash="FB75D07E09DFA817F2B237B73FD650A4013F50EA"
+                       ProductName="Microsoft SQL Server 2014  Express Advanced x64"
+                       Size="1202918472"
+                       Version="12.0.2000.8" />
+        <ExitCode Value="3010"
+                  Behavior="forceReboot" />
+      </ExePackage>
+
+    </PackageGroup>
+  </Fragment>
+</Wix>
