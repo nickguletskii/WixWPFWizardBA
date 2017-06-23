@@ -405,4 +405,7 @@
   <data name="WixBootstrapper_RestartPendingDialogTitle" xml:space="preserve">
     <value>{0} - Setup</value>
   </data>
+  <data name="FinishErrorPage_FinishErrorSqlServerRebootPending" xml:space="preserve">
+    <value>SQL Server setup failed because a reboot is pending. Please reboot your computer and try again.</value>
+  </data>
 </root>

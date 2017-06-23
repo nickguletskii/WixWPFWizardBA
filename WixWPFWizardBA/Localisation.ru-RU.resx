@@ -357,6 +357,12 @@
   <data name="WelcomePage_WelcomeText" xml:space="preserve">
     <value>Вас приветствует мастер установки {0}!</value>
   </data>
+  <data name="WixBootstrapper_RestartPendingDialogBody" xml:space="preserve">
+    <value>Cистема находится в состоянии ожидания перезагрузки. Перезагрузите компьютер прежде чем устанавливать {0}.</value>
+  </data>
+  <data name="WixBootstrapper_RestartPendingDialogTitle" xml:space="preserve">
+    <value>{0} - Установщик</value>
+  </data>
   <data name="Wizard_BackButtonText" xml:space="preserve">
     <value>Назад</value>
   </data>
