@@ -88,6 +88,15 @@ namespace WixWPFWizardBA {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SQL Server instance directory.
+        /// </summary>
+        public static string AdvancedConfigurationPage_SqlServerInstanceInstallDirLabel {
+            get {
+                return ResourceManager.GetString("AdvancedConfigurationPage_SqlServerInstanceInstallDirLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checking for updates....
         /// </summary>
         public static string BootrapperUpdateCheckPage_CheckingForUpdatesMessage {

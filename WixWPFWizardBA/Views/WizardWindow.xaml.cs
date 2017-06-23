@@ -40,8 +40,10 @@
             if (this.ViewModel.ShouldCancel)
             {
                 MessageBox.Show(this,
-                    string.Format(Localisation.CancelAlreadyInProgressMessageBoxBody, this.ViewModel.Bootstrapper.BundleName),
-                    string.Format(Localisation.CancelAlreadyInProgressMessageBoxTitle, this.ViewModel.Bootstrapper.BundleName),
+                    string.Format(Localisation.CancelAlreadyInProgressMessageBoxBody,
+                        this.ViewModel.Bootstrapper.BundleName),
+                    string.Format(Localisation.CancelAlreadyInProgressMessageBoxTitle,
+                        this.ViewModel.Bootstrapper.BundleName),
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 e.Cancel = true;
                 return;
@@ -52,7 +54,8 @@
             else
                 MessageBox.Show(this,
                     string.Format(Localisation.CancelUnavailableMessageBoxBody, this.ViewModel.Bootstrapper.BundleName),
-                    string.Format(Localisation.CancelUnavailableMessageBoxTitle, this.ViewModel.Bootstrapper.BundleName),
+                    string.Format(Localisation.CancelUnavailableMessageBoxTitle,
+                        this.ViewModel.Bootstrapper.BundleName),
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             e.Cancel = true;
         }

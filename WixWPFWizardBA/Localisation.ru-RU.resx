@@ -126,6 +126,9 @@
   <data name="AdvancedConfigurationPage_InstallationPathLabel" xml:space="preserve">
     <value>Путь установки {0}</value>
   </data>
+  <data name="AdvancedConfigurationPage_SqlServerInstanceInstallDirLabel" xml:space="preserve">
+    <value>Директория экземпляра SQL Server</value>
+  </data>
   <data name="BootrapperUpdateCheckPage_CheckingForUpdatesMessage" xml:space="preserve">
     <value>Идет проверка на наличие обновлений установщика...</value>
   </data>

@@ -16,7 +16,6 @@
         public static WizardWindow RootView { get; set; }
 
         public string BundleName => this.Engine.StringVariables["WixBundleName"];
-        public string DefaultInstallDirectoryName => this.BundleName;
 
         protected override void Run()
         {

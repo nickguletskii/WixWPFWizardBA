@@ -408,4 +408,7 @@
   <data name="FinishErrorPage_FinishErrorSqlServerRebootPending" xml:space="preserve">
     <value>SQL Server setup failed because a reboot is pending. Please reboot your computer and try again.</value>
   </data>
+  <data name="AdvancedConfigurationPage_SqlServerInstanceInstallDirLabel" xml:space="preserve">
+    <value>SQL Server instance directory</value>
+  </data>
 </root>

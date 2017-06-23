@@ -22,11 +22,11 @@
 
         private int _errorCode;
         private string _errorMessage;
+        private LaunchAction _executedAction;
         private bool? _isInstalled;
 
 
         private LaunchAction _launchAction;
-        private LaunchAction _executedAction;
         private bool _restartConfirmed;
         private bool _restartRequired;
         private int _status;
@@ -205,6 +205,7 @@
                 }
             }
         }
+
         /// <summary>
         ///     The action that will be executed when the installaiton will begin.
         /// </summary>
