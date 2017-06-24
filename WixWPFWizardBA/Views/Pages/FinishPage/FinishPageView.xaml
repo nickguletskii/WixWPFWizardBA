@@ -18,8 +18,6 @@
     <DockPanel Margin="10">
         <TextBlock DockPanel.Dock="Top"
                    FontSize="24"
-                   Text="{Binding Bootstrapper.BundleName,
-                                  StringFormat={x:Static wixWpfWizardBa:Localisation.FinishPage_InstallationFinishedSuccessfully}}"
                    TextWrapping="Wrap">
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
