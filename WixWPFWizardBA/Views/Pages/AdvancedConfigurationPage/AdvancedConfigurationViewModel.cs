@@ -63,7 +63,7 @@
                 if (!newPath.EndsWith(Path.DirectorySeparatorChar + defaultSqlServerInstanceInstallFolderName))
                     newPath = Path.Combine(newPath, defaultSqlServerInstanceInstallFolderName);
                 this.SqlServerInstanceInstallFolder = newPath;
-            }, _ => true);
+            }, _ => this.WizardViewModel.PackageCombinationConfiguration.InstallationType == InstallationType.MasterServer);
 
 
             this._installFolderHelper = new WixVariableHelper(wizardViewModel.Bootstrapper, "InstallDir");

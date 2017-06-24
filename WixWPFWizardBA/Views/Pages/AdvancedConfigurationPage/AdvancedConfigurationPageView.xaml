@@ -22,6 +22,33 @@
                 </Style.Triggers>
                 <Setter Property="Visibility" Value="Visible" />
             </Style>
+            <Style x:Key="AdvancedSqlServer"
+                   TargetType="FrameworkElement">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsChecked,
+                                                   ElementName=HideAdvancedSettingsCheckbox}"
+                                 Value="True">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding WizardViewModel.PackageCombinationConfiguration.SqlServerInstallationType}"
+                                 Value="{x:Static wixWpfWizardBa:SqlServerInstallationType.None}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding WizardViewModel.PackageCombinationConfiguration.SqlServerInstallationType}"
+                                 Value="{x:Static wixWpfWizardBa:SqlServerInstallationType.UpgradeMajor}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding WizardViewModel.PackageCombinationConfiguration.SqlServerInstallationType}"
+                                 Value="{x:Static wixWpfWizardBa:SqlServerInstallationType.UpgradeMinor}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding WizardViewModel.PackageCombinationConfiguration.SqlServerInstallationType}"
+                                 Value="{x:Static wixWpfWizardBa:SqlServerInstallationType.Unknown}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                </Style.Triggers>
+                <Setter Property="Visibility" Value="Visible" />
+            </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -60,31 +87,34 @@
         <TextBlock Grid.Row="2"
                    Grid.Column="0"
                    Margin="10"
-                   Style="{StaticResource Advanced}"
+                   Style="{StaticResource AdvancedSqlServer}"
                    Text="{x:Static wixWpfWizardBa:Localisation.AdvancedConfigurationPage_SqlServerInstanceInstallDirLabel}"
                    TextWrapping="Wrap" />
         <TextBox Grid.Row="2"
                  Grid.Column="1"
                  Margin="10 10 0 10"
-                 Style="{StaticResource Advanced}"
+                 IsEnabled="{Binding IsEnabled,
+                                     ElementName=SqlServerInstanceInstallFolderBrowseButton}"
+                 Style="{StaticResource AdvancedSqlServer}"
                  Text="{Binding SqlServerInstanceInstallFolder}" />
-        <Button Grid.Row="2"
+        <Button x:Name="SqlServerInstanceInstallFolderBrowseButton"
+                Grid.Row="2"
                 Grid.Column="2"
                 Margin="0 10 10 10"
                 Command="{Binding SqlServerInstanceInstallFolderBrowseCommand}"
                 Content="{x:Static wixWpfWizardBa:Localisation.BrowseButtonText}"
-                Style="{StaticResource Advanced}" />
+                Style="{StaticResource AdvancedSqlServer}" />
         <TextBlock Grid.Row="3"
                    Grid.Column="0"
                    Margin="10"
-                   Style="{StaticResource Advanced}"
+                   Style="{StaticResource AdvancedSqlServer}"
                    Text="{x:Static wixWpfWizardBa:Localisation.AdvancedConfigurationPage_AdditionalSqlServerInstallParameters}"
                    TextWrapping="Wrap" />
         <TextBox Grid.Row="3"
                  Grid.Column="1"
                  Grid.ColumnSpan="2"
                  Margin="10 10 10 10"
-                 Style="{StaticResource Advanced}"
+                 Style="{StaticResource AdvancedSqlServer}"
                  Text="{Binding SqlServerAdditionalParameters}" />
     </Grid>
 </UserControl>
