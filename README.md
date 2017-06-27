@@ -28,6 +28,16 @@ WixWPFWizardBA supports Windows 7 SP1 and newer, and has been tested on Windows 
 * Supports SQL Server upgrades.
 * Supports customisation of SQL Server instance installation directory.
 
+## How to use
+
+First of all, you should copy the WixWPFWizardBA project, change the namespaces, and change the few localisation strings that contain WixWPFWizardBA's name in them to display your project's name instead.
+
+Then, you must integrate the bootstrapper into your bundle. For an example of how to do that, please see WixWPFWizardBA.DemoBootstrapper.
+
+Once you add the required packages to the Wix definition of the bundle, you should add them to PackageConfiguration, or implement your own IPackageInstallationStrategy.
+
+This list of instructions is by no means complete, so if you have any thoughts on how to expand it, please let me know on the [issue tracker](https://gitlab.com/nickguletskii/WixWPFWizardBA/issues).
+
 ## Known issues
 
 * Doesn't implement UpdateReplaceEmbedded (I am not sure what it is supposed to do).
