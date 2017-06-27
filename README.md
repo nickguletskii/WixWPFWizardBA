@@ -21,7 +21,7 @@ WixWPFWizardBA supports Windows 7 SP1 and newer, and has been tested on Windows 
 
 ## Demo bootstrapper features
 
-* Localised for English and Russian, but not all text may fit the views because the frontend was initially made for a russian product.
+* Contains English and Russian translations, but not all text may fit the views because the frontend was initially made for a russian product.
 * Installs .NET Framework 4.6.2, a demo msi and SQL Server Express 2014 with advanced services. **WARNING:** To redistribute .NET Framework 4.6.2 and SQL Server Express 2014, you must agree to both the license of .NET Framework and the [Microsoft® SQL Server® Express License Terms for Redistribution and Hosting
 ](https://www.microsoft.com/en-us/download/details.aspx?id=29693). Both require you to require the user to agree to "terms that protect it at least as much as this agreement", "it" being the product being redistributed.
 * Supports two installation types (package combinations): Client and MasterServer (Server + Client). There's also an unused SlaveServer installation type (which isn't present in the GUI).
