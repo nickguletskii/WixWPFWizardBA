@@ -191,6 +191,7 @@
     </None>
     <EmbeddedResource Include="License.rtf" />
     <None Include="packages.config" />
+    <None Include="WixWPFWizardBA.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localisation.resx">

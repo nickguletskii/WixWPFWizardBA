@@ -1,4 +1,8 @@
-﻿<UserControl x:Class="WixWPFWizardBA.Views.Pages.FinishPage.FinishPageView"
+﻿<!--
+    Copyright (c) Nick Guletskii and Arseniy Aseev. All rights reserved.  
+    Licensed under the MIT License. See LICENSE file in the solution root for full license information.  
+-->
+<UserControl x:Class="WixWPFWizardBA.Views.Pages.FinishPage.FinishPageView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:bootstrapper="clr-namespace:Microsoft.Tools.WindowsInstallerXml.Bootstrapper;assembly=BootstrapperCore"
