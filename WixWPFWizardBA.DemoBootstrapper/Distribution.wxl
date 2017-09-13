@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WixLocalization xmlns="http://schemas.microsoft.com/wix/2006/localization">
   <String Id="BundleName">Demo Bootstrapper</String>
-  <String Id="Manufacturer">Nick Guletskii</String>
+  <String Id="Manufacturer">PLACEHOLDER, PLEASE CHANGE</String>
   <String Id="BootstrapperGuiProjectName">WixWPFWizardBA</String>
   <String Id="UpdateUrl">http://localhost:8000/repository/feed/v1.feed</String>
 </WixLocalization>

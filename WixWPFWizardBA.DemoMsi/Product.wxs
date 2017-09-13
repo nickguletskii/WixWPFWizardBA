@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="WixWPFWizardBA.DemoMsi" Language="1033" Version="1.0.0.0" Manufacturer="Nick Guletskii" UpgradeCode="7de615ba-adcf-47f6-9c6f-13a27b2963cd">
+  <Product Id="*" Name="WixWPFWizardBA.DemoMsi" Language="1033" Version="1.0.0.0" Manufacturer="PLACEHOLDER, PLEASE CHANGE" UpgradeCode="7de615ba-adcf-47f6-9c6f-13a27b2963cd">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
