@@ -4,6 +4,16 @@ WixWPFWizardBA is a template for custom WPF-based wizard-like Wix Burn frontends
 
 Issue tracker: https://gitlab.com/nickguletskii/WixWPFWizardBA/issues
 
+## Screenshots
+
+![Welcome screen][screenshots/welcome1.PNG]
+
+![Progress screen][screenshots/progress.PNG]
+
+![Finish screen][screenshots/finish.PNG]
+
+For more screenshots, please scroll down to the end of the README.
+
 ## Supported operating systems
 
 WixWPFWizardBA supports Windows 7 SP1 and newer, and has been tested on Windows 7 SP1 and Windows 10.
@@ -74,3 +84,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Some files may be licensed under a different license. Please see the LICENSE file for the complete license information.
+
+## More screenshots
+
+![Configuration screen][screenshots/configure.PNG]
+
+![License screen][screenshots/license.PNG]
+
+![Default feature selection screen][screenshots/features.PNG]
+
+![Welcome screen (when installed)][screenshots/welcome2.PNG]
