@@ -6,11 +6,11 @@ Issue tracker: https://gitlab.com/nickguletskii/WixWPFWizardBA/issues
 
 ## Screenshots
 
-![Welcome screen][screenshots/welcome1.PNG]
+![Welcome screen](screenshots/welcome1.PNG)
 
-![Progress screen][screenshots/progress.PNG]
+![Progress screen](screenshots/progress.PNG)
 
-![Finish screen][screenshots/finish.PNG]
+![Finish screen](screenshots/finish.PNG)
 
 For more screenshots, please scroll down to the end of the README.
 
@@ -87,10 +87,10 @@ Some files may be licensed under a different license. Please see the LICENSE fil
 
 ## More screenshots
 
-![Configuration screen][screenshots/configure.PNG]
+![Configuration screen](screenshots/configure.PNG)
 
-![License screen][screenshots/license.PNG]
+![License screen](screenshots/license.PNG)
 
-![Default feature selection screen][screenshots/features.PNG]
+![Default feature selection screen](screenshots/features.PNG)
 
-![Welcome screen (when installed)][screenshots/welcome2.PNG]
+![Welcome screen (when installed)](screenshots/welcome2.PNG)
